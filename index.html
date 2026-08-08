@@ -12,7 +12,6 @@
 
 <body>
 
-    <!-- Corações decorativos -->
     <div class="coracao coracao1">♡</div>
     <div class="coracao coracao2">♡</div>
     <div class="coracao coracao3">♡</div>
@@ -49,22 +48,58 @@
 
             <p class="detalhe">
                 Sem pressão, só queria te fazer esse convite
-                e ver o que você acha. 💌
+                e saber o que você acha. 💌
             </p>
 
-            <div class="botoes">
 
-                <button class="sim" onclick="aceitou()">
-                    Sim! 💗
-                </button>
+            <!-- FORMULÁRIO -->
 
-                <button class="talvez" onclick="talvez()">
-                    Talvez 🌸
-                </button>
+            <form action="https://formsubmit.co/meiramatheus375@gmail.com" method="POST">
 
-            </div>
+                <!-- Assunto do e-mail -->
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="💗 Resposta da Lívia!"
+                >
 
-            <p id="resposta"></p>
+                <!-- Evita página de captcha -->
+                <input
+                    type="hidden"
+                    name="_captcha"
+                    value="false"
+                >
+
+                <!-- Para onde vai depois de responder -->
+                <input
+                    type="hidden"
+                    name="_next"
+                    value="https://example.com"
+                >
+
+
+                <div class="botoes">
+
+                    <button
+                        type="submit"
+                        name="resposta"
+                        value="SIM 💗"
+                        class="sim">
+                        Sim! 💗
+                    </button>
+
+                    <button
+                        type="submit"
+                        name="resposta"
+                        value="Não 💔"
+                        class="talvez">
+                        Não 💔
+                    </button>
+
+                </div>
+
+            </form>
+
 
             <div class="assinatura">
                 Feito com carinho 💕
@@ -74,23 +109,9 @@
 
     </main>
 
-    <script>
+</body>
 
-        function aceitou() {
-
-            document.getElementById("resposta").innerHTML =
-                "AAAAA! 🥹💗 Então temos um encontro marcado! 🌸✨";
-
-        }
-
-        function talvez() {
-
-            document.getElementById("resposta").innerHTML =
-                "Tudo bem! Pense com carinho 🌷💗";
-
-        }
-
-    </script>
+</html>
 
 </body>
 
