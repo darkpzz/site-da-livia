@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at top left, #ffd6e7, transparent 35%),
+        radial-gradient(circle at bottom right, #ffc1dc, transparent 35%),
+        #fff0f6;
+
+    color: #5c3045;
+
+    overflow-x: hidden;
+}
+
+/* Área principal */
+
+.container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+}
+
+/* Carta */
+
+.carta {
+    position: relative;
+
+    width: 100%;
+    max-width: 650px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    padding: 50px 40px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 40px rgba(190, 80, 120, 0.2);
+
+    border: 2px solid #ffd0e1;
+
+    animation: aparecer 1s ease;
+}
+
+/* Flor */
+
+.flor {
+    font-size: 55px;
+
+    margin-bottom: 10px;
+
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+/* Título */
+
+h1 {
+    font-size: 52px;
+
+    color: #d95b91;
+
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    font-size: 20px;
+
+    color: #9c5976;
+
+    margin-bottom: 30px;
+}
+
+/* Mensagem */
+
+.mensagem {
+    background: #fff2f7;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    margin-bottom: 30px;
+
+    border: 1px solid #ffd4e5;
+}
+
+.mensagem p {
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 12px;
+}
+
+.mensagem p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pergunta */
+
+h2 {
+    font-size: 27px;
+
+    color: #c7477e;
+
+    margin-bottom: 15px;
+}
+
+.detalhe {
+    font-size: 15px;
+
+    color: #98677d;
+
+    margin-bottom: 30px;
+}
+
+/* Botões */
+
+.botoes {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.sim {
+    background: #e96b9b;
+
+    color: white;
+
+    box-shadow: 0 6px 15px rgba(220, 80, 130, 0.3);
+}
+
+.sim:hover {
+    transform: translateY(-4px) scale(1.04);
+
+    background: #dc568b;
+}
+
+.talvez {
+    background: #ffe0ec;
+
+    color: #b94d78;
+}
+
+.talvez:hover {
+    transform: translateY(-4px);
+
+    background: #ffd0e2;
+}
+
+/* Resposta */
+
+#resposta {
+    margin-top: 25px;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    color: #d34f86;
+
+    min-height: 25px;
+}
+
+/* Assinatura */
+
+.assinatura {
+    margin-top: 35px;
+
+    font-size: 14px;
+
+    color: #b47a91;
+}
+
+/* Corações */
+
+.coracao {
+    position: fixed;
+
+    color: #e98aaa;
+
+    font-size: 40px;
+
+    opacity: 0.5;
+
+    animation: flutuar 4s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+.coracao1 {
+    top: 10%;
+
+    left: 8%;
+}
+
+.coracao2 {
+    top: 70%;
+
+    left: 12%;
+
+    font-size: 30px;
+
+    animation-delay: 1s;
+}
+
+.coracao3 {
+    top: 15%;
+
+    right: 10%;
+
+    font-size: 30px;
+
+    animation-delay: 2s;
+}
+
+.coracao4 {
+    bottom: 10%;
+
+    right: 8%;
+
+    animation-delay: 0.5s;
+}
+
+/* Animações */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes flutuar {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+/* Celular */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 20px 12px;
+    }
+
+    .carta {
+        padding: 35px 22px;
+
+        border-radius: 24px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    .subtitulo {
+        font-size: 17px;
+    }
+
+    .mensagem p {
+        font-size: 15px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .coracao {
+        font-size: 25px;
+    }
+
+}

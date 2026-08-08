@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para Lívia 💗</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Corações decorativos -->
+    <div class="coracao coracao1">♡</div>
+    <div class="coracao coracao2">♡</div>
+    <div class="coracao coracao3">♡</div>
+    <div class="coracao coracao4">♡</div>
+
+    <main class="container">
+
+        <div class="carta">
+
+            <div class="flor">🌸</div>
+
+            <h1>Lívia 💗</h1>
+
+            <p class="subtitulo">
+                Eu queria te fazer uma perguntinha...
+            </p>
+
+            <div class="mensagem">
+
+                <p>
+                    Eu gosto muito de conversar com você
+                    e acho que seria muito legal passar
+                    um tempo juntos. 🌷
+                </p>
+
+                <p>
+                    Então pensei em te fazer um convite
+                    um pouquinho diferente...
+                </p>
+
+            </div>
+
+            <h2>Você gostaria de sair comigo? 🥺💕</h2>
+
+            <p class="detalhe">
+                Sem pressão, só queria te fazer esse convite
+                e ver o que você acha. 💌
+            </p>
+
+            <div class="botoes">
+
+                <button class="sim" onclick="aceitou()">
+                    Sim! 💗
+                </button>
+
+                <button class="talvez" onclick="talvez()">
+                    Talvez 🌸
+                </button>
+
+            </div>
+
+            <p id="resposta"></p>
+
+            <div class="assinatura">
+                Feito com carinho 💕
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+
+        function aceitou() {
+
+            document.getElementById("resposta").innerHTML =
+                "AAAAA! 🥹💗 Então temos um encontro marcado! 🌸✨";
+
+        }
+
+        function talvez() {
+
+            document.getElementById("resposta").innerHTML =
+                "Tudo bem! Pense com carinho 🌷💗";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
