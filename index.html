@@ -52,53 +52,47 @@
             </p>
 
 
-            <!-- FORMULÁRIO -->
+<!-- FORMULÁRIO -->
 
-            <form action="https://formsubmit.co/meiramatheus375@gmail.com" method="POST">
+<form id="formulario">
 
-                <!-- Assunto do e-mail -->
-                <input
-                    type="hidden"
-                    name="_subject"
-                    value="💗 Resposta da Lívia!"
-                >
+    <input
+        type="hidden"
+        name="_subject"
+        value="💗 Resposta da Lívia!"
+    >
 
-                <!-- Evita página de captcha -->
-                <input
-                    type="hidden"
-                    name="_captcha"
-                    value="false"
-                >
+    <input
+        type="hidden"
+        name="_captcha"
+        value="false"
+    >
 
-                <!-- Para onde vai depois de responder -->
-                <input
-                    type="hidden"
-                    name="_next"
-                    value="https://darkpzz.github.io/site-da-livia/"
-                >
+    <div class="botoes">
 
+        <button
+            type="submit"
+            name="resposta"
+            value="SIM 💗"
+            class="sim">
+            Sim! 💗
+        </button>
 
-                <div class="botoes">
+        <button
+            type="submit"
+            name="resposta"
+            value="Não 💔"
+            class="talvez">
+            Não 💔
+        </button>
 
-                    <button
-                        type="submit"
-                        name="resposta"
-                        value="SIM 💗"
-                        class="sim">
-                        Sim! 💗
-                    </button>
+    </div>
 
-                    <button
-                        type="submit"
-                        name="resposta"
-                        value="Não 💔"
-                        class="talvez">
-                        Não 💔
-                    </button>
+</form>
 
-                </div>
+<!-- Mensagem que aparecerá depois da resposta -->
 
-            </form>
+<div id="resposta-final"></div>
 
 
             <div class="assinatura">
@@ -109,10 +103,108 @@
 
     </main>
 
+<script>
+
+const formulario = document.getElementById("formulario");
+const mensagem = document.getElementById("resposta-final");
+
+formulario.addEventListener("submit", async function(event) {
+
+    // Impede o site de recarregar
+    event.preventDefault();
+
+    // Descobre qual botão foi clicado
+    const botao = event.submitter;
+    const resposta = botao.value;
+
+    // Desabilita os botões enquanto envia
+    const botoes = formulario.querySelectorAll("button");
+
+    botoes.forEach(function(botao) {
+        botao.disabled = true;
+    });
+
+    try {
+
+        const dados = new FormData();
+
+        dados.append("resposta", resposta);
+        dados.append("_subject", "💗 Resposta da Lívia!");
+
+        const resultado = await fetch(
+            "https://formsubmit.co/ajax/meiramatheus375@gmail.com",
+            {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json"
+                },
+                body: dados
+            }
+        );
+
+        if (resultado.ok) {
+
+            formulario.style.display = "none";
+
+            if (resposta === "SIM 💗") {
+
+                mensagem.innerHTML = `
+                    <h2>AAAAA! 🥹💗</h2>
+                    <p>
+                        Você acabou de deixar alguém muito feliz! 🌷💕
+                    </p>
+                `;
+
+            } else {
+
+                mensagem.innerHTML = `
+                    <h2>Tudo bem! 💗</h2>
+                    <p>
+                        Obrigado por responder com sinceridade. 🌸
+                    </p>
+                `;
+
+            }
+
+        } else {
+
+            mensagem.innerHTML = `
+                <p>
+                    Ops! 😭 Parece que aconteceu um problema.
+                    Tente novamente.
+                </p>
+            `;
+
+            botoes.forEach(function(botao) {
+                botao.disabled = false;
+            });
+        }
+
+    } catch (erro) {
+
+        mensagem.innerHTML = `
+            <p>
+                Ops! 😭 Não consegui enviar a resposta.
+                Tente novamente.
+            </p>
+        `;
+
+        botoes.forEach(function(botao) {
+            botao.disabled = false;
+        });
+
+    }
+
+});
+
+</script>
+
 </body>
 
 </html>
 
 </body>
+
+</html>
 
 </html>
